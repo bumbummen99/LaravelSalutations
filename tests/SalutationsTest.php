@@ -1,11 +1,10 @@
 <?php
+
 namespace SkyRaptor\Tests\LaravelSalutations;
 
-use PHPUnit\Framework\Assert;
 use Orchestra\Testbench\TestCase;
-
-use SkyRaptor\LaravelSalutations\SalutationsServiceProvider;
 use SkyRaptor\LaravelSalutations\Salutations;
+use SkyRaptor\LaravelSalutations\SalutationsServiceProvider;
 
 class SalutationsTest extends TestCase
 {
@@ -13,6 +12,7 @@ class SalutationsTest extends TestCase
      * Set the package service provider.
      *
      * @param \Illuminate\Foundation\Application $app
+     *
      * @return array
      */
     protected function getPackageProviders($app)
@@ -23,7 +23,8 @@ class SalutationsTest extends TestCase
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param \Illuminate\Foundation\Application $app
+     *
      * @return void
      */
     protected function getEnvironmentSetUp($app)
@@ -84,8 +85,8 @@ class SalutationsTest extends TestCase
     {
         $salutations = new Salutations();
 
-        $this->assertEquals(true, is_array($salutations->lookup()) );
-        $this->assertEquals(true, count($salutations->lookup()) > 0 );
+        $this->assertEquals(true, is_array($salutations->lookup()));
+        $this->assertEquals(true, count($salutations->lookup()) > 0);
     }
 
     /** @test */
@@ -96,8 +97,9 @@ class SalutationsTest extends TestCase
         $lookup = $salutations->lookupInclude([0, 'female']);
 
         $this->assertEquals(2, count($lookup));
-        foreach($lookup as $i => $e)
+        foreach ($lookup as $i => $e) {
             $this->assertEquals(true, $i == 0 || $i == 1);
+        }
     }
 
     /** @test */
@@ -109,8 +111,9 @@ class SalutationsTest extends TestCase
         $numExpected = count($salutations->lookup()) - 2;
 
         $this->assertEquals($numExpected, count($lookup));
-        foreach($lookup as $i => $e)
+        foreach ($lookup as $i => $e) {
             $this->assertEquals(false, $i == 0 || $i == 1);
+        }
     }
 
     /** @test */
@@ -131,7 +134,7 @@ class SalutationsTest extends TestCase
         $this->assertEquals('Herr', $salutations->male());
     }
 
-    /** 
+    /**
      * @test
      * @expectedException SkyRaptor\LaravelSalutations\Exceptions\InvalidIndexException
      */
@@ -142,7 +145,7 @@ class SalutationsTest extends TestCase
         $test = $salutations->index(9999);
     }
 
-    /** 
+    /**
      * @test
      * @expectedException SkyRaptor\LaravelSalutations\Exceptions\InvalidKeyException
      */

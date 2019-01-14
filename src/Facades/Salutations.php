@@ -5,8 +5,7 @@ namespace SkyRaptor\LaravelSalutations\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * SkyRaptor\LaravelSalutations\Facades\Salutation
- *
+ * SkyRaptor\LaravelSalutations\Facades\Salutation.
  */
 class Salutations extends Facade
 {
@@ -15,5 +14,8 @@ class Salutations extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'salutations'; }
+    protected static function getFacadeAccessor()
+    {
+        return 'salutations';
+    }
 }
