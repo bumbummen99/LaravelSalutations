@@ -54,6 +54,7 @@ class Salutations
         if (!array_key_exists($index, $this->lookup)) {
             throw new InvalidIndexException('There is no salutation for the given index. Provided index: '.$index);
         }
+
         return $this->key($this->lookup[$index]);
     }
 
@@ -70,6 +71,7 @@ class Salutations
         if (!in_array($key, $this->lookup)) {
             throw new InvalidKeyException('There is no salutation for the given key. Provided key: '.$key);
         }
+
         return self::trans_fb('salutations::salutations.'.$key, $this->locale);
     }
 
@@ -173,7 +175,6 @@ class Salutations
                     continue;
                 }
             } else {
-                ;
                 if (!array_key_exists($index = $filter, $this->lookup)) {
                     continue;
                 }
