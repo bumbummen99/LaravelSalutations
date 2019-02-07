@@ -169,13 +169,12 @@ class Salutations
     {
         foreach ($filters as $filter) {
             if (is_string($filter)) {
-                $index = array_search($filter, $this->lookup);
-                if ($index === false) {
+                if (($index = array_search($filter, $this->lookup)) === false) {
                     continue;
                 }
             } else {
-                $index = $filter;
-                if (!array_key_exists($index, $this->lookup)) {
+                ;
+                if (!array_key_exists($index = $filter, $this->lookup)) {
                     continue;
                 }
             }
