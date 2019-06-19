@@ -6,6 +6,7 @@
 [![Latest Stable Version](https://poser.pugx.org/skyraptor/salutations/v/stable)](https://packagist.org/packages/skyraptor/salutations)
 [![Latest Unstable Version](https://poser.pugx.org/skyraptor/salutations/v/unstable)](https://packagist.org/packages/skyraptor/salutations)
 [![License](https://poser.pugx.org/skyraptor/salutations/license)](https://packagist.org/packages/skyraptor/salutations)
+[![Homepage](https://img.shields.io/badge/homepage-skyraptor.eu-informational.svg?style=flat&logo=appveyor)](https://skyraptor.eu)
 
 This is a simple package to provide multilangual salutations.
 
